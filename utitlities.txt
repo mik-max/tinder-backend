@@ -1,0 +1,2 @@
+installed nodemon with npm i -g nodemon
+installed cors with npm i cors (adds headers to an api request)
