@@ -12,17 +12,17 @@ app.use(Cors());
 
 // DB config
 mongoose.connect(connection_url)
-// API Endpoint
+// API Endpoints
 app.get('/', (req, res) => res.status(200).send('Hello CleverProgrammers!!!!!. My very first API!!!🔥🔥'))
 app.post('/tinder/cards', (req, res) => {
      const dbCard = req.body;
      Cards.create(dbCard, (err, data) => {
           if(err){
                res.status(500).send(err)
-          }else{
+          }else{  
                res.status(201).send(data);
           }
-     })
+     })  
 });
 app.get('/tinder/cards', (req, res) => {
      Cards.find((err, data) => {
@@ -35,3 +35,5 @@ app.get('/tinder/cards', (req, res) => {
 });
 // Listener
 app.listen(port, () => console.log(`Listening on localhost: ${port}`));
+
+// https://tinder-api-backend.herokuapp.com/  Hosted version of the API🔥🔥
